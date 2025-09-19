@@ -13,13 +13,13 @@ function Contact() {
           <span>Canales directos</span>
           <div className="contact-icons">
             <a href="https://wa.me/2664565098" target="_blank" rel="noopener noreferrer" className="icon-btn-glass" title="WhatsApp">
-              <img src="/img/whatsapp.webp" alt="WhatsApp" />
+              <img src="img/whatsapp.webp" alt="WhatsApp" />
             </a>
             <a href="mailto:transportedonroque@outlook.com" target="_blank" rel="noopener noreferrer" className="icon-btn-glass" title="Email">
-              <img src="/img/gmail.webp" alt="Email" />
+              <img src="img/gmail.webp" alt="Email" />
             </a>
             <a href="https://www.instagram.com/transportedonroque.sl/" target="_blank" rel="noopener noreferrer" className="icon-btn-glass" title="Instagram">
-              <img src="/img/instagram.webp" alt="Instagram" />
+              <img src="img/instagram.webp" alt="Instagram" />
             </a>
           </div>
         </div>

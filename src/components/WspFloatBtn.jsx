@@ -10,7 +10,7 @@ function WspFloatBtn() {
       rel="noopener noreferrer"
       aria-label="Enviar WhatsApp"
     >
-      <img src="/img/whatsapp.webp" alt="WhatsApp" />
+      <img src="img/whatsapp.webp" alt="WhatsApp" />
     </a>
   );
 }

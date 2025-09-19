@@ -9,7 +9,7 @@ function Header() {
     <header className="header">
       <div className="header-content">
         <a href="#inicio" className="logo-link">
-          <img src="/img/logo-donroque.png" alt="Logo Don Roque" className="logo-img" />
+          <img src="img/logo-donroque.png" alt="Logo Don Roque" className="logo-img" />
            {/* <span className="logo-txt">Transporte <b>Don Roque</b></span> */}
         </a>
 
