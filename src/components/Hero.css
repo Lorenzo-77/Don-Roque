@@ -7,16 +7,12 @@
   background: url("/img/fondo.png") center/cover no-repeat;
   overflow: hidden;
 }
-
 .hero-overlay {
   position: absolute;
   inset: 0;
-  /* Fondo negro mate más opaco */
   background: linear-gradient(180deg, rgba(34,34,34,0.75) 70%, rgba(34,34,34,0.93) 100%);
   z-index: 1;
 }
- 
-
 .hero-content {
   position: relative;
   z-index: 2;
@@ -27,6 +23,7 @@
   margin: 0 auto;
 }
 
+/* Titular y párrafo (misma estética) */
 .hero h1 {
   font-family: var(--font-titulo);
   font-size: 2.8rem;
@@ -36,15 +33,15 @@
   letter-spacing: 1px;
   text-shadow: 1px 2px 18px #0008;
 }
-
 .hero p {
   font-family: var(--font-texto);
   font-size: 1.25rem;
   font-weight: 400;
-  margin-bottom: 38px;
+  margin-bottom: 28px; /* un poco menos para balancear botón más pequeño */
   text-shadow: 1px 2px 10px #0005;
 }
 
+/* Botón: versión más compacta y con variante .hero-btn--sm */
 .hero-btn {
   display: inline-block;
   background: var(--rojo);
@@ -56,18 +53,53 @@
   border-radius: 4px;
   text-decoration: none;
   box-shadow: 0 3px 12px #0002;
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.12s;
   letter-spacing: 0.5px;
 }
+.hero-btn:hover { background: #b22222; box-shadow: 0 8px 22px #c6282840; transform: translateY(-2px); }
 
-.hero-btn:hover {
-  background: #b22222;
-  box-shadow: 0 8px 22px #c6282840;
+/* Variante pequeña (usa en el hero cuando querés menos tamaño) */
+.hero-btn--sm {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.14);
 }
 
+/* Mobile adjustments */
+/* REEMPLAZAR: @media (max-width: 600px) */
 @media (max-width: 600px) {
-  .hero h1 { font-size: 1.45rem; }
-  .hero p { font-size: 1rem; }
-  .hero-content { padding: 0 16px; }
-  .hero { min-height: 42vh; }
+  /* mobile: usar fondo2 y ocupar más espacio */
+  .hero {
+    background: url("/img/fondo2.png") center top/cover no-repeat;
+    background-attachment: scroll; /* evita efectos raros en mobile */
+    min-height: 85vh; /* AUMENTADO: ocupa la mayor parte de la pantalla en móvil */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* contenido centrado y con más padding para que no quede apretado */
+  .hero-content {
+    padding: 2rem 18px;
+    max-width: 92%;
+    margin: 0 auto;
+  }
+
+  /* textos un poco más grandes para aprovechar el mayor hero */
+  .hero h1 {
+    font-size: 1.95rem; /* antes 1.45rem */
+    line-height: 1.06;
+    margin-bottom: 18px;
+  }
+  .hero p {
+    font-size: 1.05rem; /* antes 1rem */
+    margin-bottom: 22px;
+  }
+
+  /* botón móvil con tamaño cómodo */
+  .hero-btn--sm {
+    padding: 11px 20px;
+    font-size: 1rem;
+  }
 }

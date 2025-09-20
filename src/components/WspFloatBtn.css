@@ -5,45 +5,29 @@
   z-index: 9999;
   width: 62px;
   height: 62px;
-  background: #25d366; /* Verde WhatsApp, o poné tu rojo si querés full marca */
+  background: #25d366; /* Verde WhatsApp */
   border-radius: 50%;
   box-shadow: 0 8px 36px #2225, 0 2px 12px #25d36666;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   transition: box-shadow 0.19s, background 0.15s, transform 0.14s;
   cursor: pointer;
   border: 3px solid #fff;
   animation: floatPulse 2.2s infinite ease-in-out;
 }
 .wsp-float-btn img {
-  width: 33px;
-  height: 33px;
+  width: 33px; height: 33px;
   filter: brightness(2.8) drop-shadow(0 2px 14px #0004);
 }
-
 .wsp-float-btn:hover {
-  background: #c62828; /* Rojo marca en hover, si lo querés */
+  background: #c62828;
   box-shadow: 0 14px 46px #c6282844, 0 4px 16px #2227;
   transform: scale(1.09);
 }
-
-/* Animación pulse sutil */
 @keyframes floatPulse {
   0%,100% { box-shadow: 0 8px 36px #2225, 0 2px 12px #25d36666; }
   50% { box-shadow: 0 20px 50px #25d36655, 0 8px 30px #2229; }
 }
-
-/* Mobile, más chico y con margen */
 @media (max-width: 700px) {
-  .wsp-float-btn {
-    width: 48px;
-    height: 48px;
-    bottom: 13px;
-    right: 11px;
-  }
-  .wsp-float-btn img {
-    width: 23px;
-    height: 23px;
-  }
+  .wsp-float-btn { width: 48px; height: 48px; bottom: 43px; right: 16px; }
+  .wsp-float-btn img { width: 23px; height: 23px; }
 }
