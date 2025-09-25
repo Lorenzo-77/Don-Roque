@@ -17,6 +17,7 @@ function Header() {
           <a href="#inicio" onClick={() => setOpen(false)}>Inicio</a>
           <a href="#servicios" onClick={() => setOpen(false)}>Servicios</a>
           <a href="#nosotros" onClick={() => setOpen(false)}>Nosotros</a>
+          <a href="#forma-pago" onClick={() => setOpen(false)}>Formas de pago</a>
           <a href="#contacto" onClick={() => setOpen(false)}>Contacto</a>
         </nav>
         <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="Abrir menú">

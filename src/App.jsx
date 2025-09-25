@@ -6,6 +6,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WspFloatBtn from "./components/WspFloatBtn";
+import FormaDePago from "./components/FormaDePago";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Hero />
       <Servicios /> 
       <About />
+      <FormaDePago />
       <Contact/>
       <Footer /> 
       <WspFloatBtn />
