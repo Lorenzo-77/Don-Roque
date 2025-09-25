@@ -1,0 +1,173 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(245, 245, 245, 0.95);
+  box-shadow: 0 2px 8px rgba(51,51,51,0.06);
+  z-index: 50;
+  transition: background 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.logo-link { display: flex; align-items: center; text-decoration: none; }
+
+.logo-img {
+  height: 44px;
+  margin-right: 16px;
+  filter: drop-shadow(1px 1px 2px #8883);
+}
+.logo-txt {
+  color: var(--rojo);
+  font-family: var(--font-titulo);
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.logo-txt b { color: var(--negro); font-weight: 800; }
+
+/* NAV */
+.nav { display: flex; gap: 32px; }
+.nav a {
+  color: var(--gris-oscuro);
+  text-decoration: none;
+  font-family: var(--font-titulo);
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.nav a:hover, .nav a:focus {
+  color: var(--rojo);
+  background: #fff3;
+}
+
+/* Menu mobile */
+.menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.menu-icon {
+  width: 26px; height: 4px; background: var(--rojo); display: block; position: relative; border-radius: 2px;
+  transition: all 0.3s;
+}
+.menu-icon:before, .menu-icon:after {
+  content: ""; width: 26px; height: 4px; background: var(--rojo); position: absolute; left: 0; border-radius: 2px; transition: all 0.3s;
+}
+.menu-icon:before { top: -9px; }
+.menu-icon:after  { top: 9px; }
+
+@media (max-width: 900px) {
+  .header-content { padding: 0 14px; }
+  .logo-img { height: 36px; margin-right: 10px; }
+  .logo-txt { font-size: 1.13rem; }
+  .nav { gap: 18px; }
+}
+
+/* ---------- MOBILE (reemplazar @media max-width:700px) ---------- */
+@media (max-width: 700px) {
+  /* Header fijo más alto para mejor usabilidad táctil */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+  }
+
+  /* Alineación y espacio para evitar que el header tape contenido */
+  .header-content {
+    height: 72px;           /* +16px */
+    padding: 0 12px;
+  }
+  /* Evita que el contenido quede oculto por el header */
+  body { padding-top: 72px; }
+
+  /* Logo un poco más grande */
+  .logo-img { height: 40px; margin-right: 12px; }
+  .logo-txt { font-size: 1.2rem; }
+
+  /* Nav: menú deslizable más alto y ancho completo */
+  .nav {
+    position: fixed;
+    top: 72px;              /* justo debajo del header */
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 100vw;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    padding: 14px 0 18px 0;
+    align-items: stretch;
+    transform: translateY(-100%); /* más consistente */
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.28s ease, opacity 0.22s ease;
+    z-index: 1001;
+  }
+  .nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Links del menú más grandes y con mayor área táctil */
+  .nav a {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1.16rem;     /* más legible */
+    border-radius: 0;
+    border-left: 6px solid transparent; /* un poco más visible */
+    text-align: left;
+  }
+  .nav a:hover, .nav a:focus {
+    background: #fff0f0;    /* suave feedback */
+    color: var(--rojo);
+    border-left-color: var(--rojo);
+  }
+
+  /* Botón menú: más visible y con mayor área clicable */
+  .menu-btn {
+    display: block;
+    margin-left: 12px;
+    width: 52px;
+    height: 44px;
+    padding: 8px;
+    align-self: center;
+    background: transparent;
+    border: none;
+  }
+  .menu-icon {
+    width: 30px;
+    height: 4px;
+    background: var(--rojo);
+    display: block;
+    position: relative;
+    border-radius: 3px;
+    transition: all 0.28s;
+    margin: 0 auto;
+  }
+  .menu-icon:before,
+  .menu-icon:after {
+    content: "";
+    width: 30px;
+    height: 4px;
+    background: var(--rojo);
+    position: absolute;
+    left: 0;
+    border-radius: 3px;
+    transition: all 0.28s;
+  }
+  .menu-icon:before { top: -10px; }
+  .menu-icon:after  { top: 10px; }
+
+  /* Ajustes menores visuales */
+  .nav a { letter-spacing: 0.4px; font-weight: 700; }
+}

@@ -1,0 +1,23 @@
+.footer {
+  background: var(--negro);
+  color: #fff;
+  padding: 30px 0 18px 0;
+  text-align: center;
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+}
+.footer-logo {
+  height: 42px;
+  margin-bottom: 6px;
+  filter: drop-shadow(1px 1px 8px #c6282830);
+}
+.footer-text {
+  font-family: var(--font-texto);
+  font-size: 1.05rem;
+  color: #fff;
+  opacity: 0.82;
+}

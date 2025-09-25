@@ -1,0 +1,265 @@
+.contact-glass {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--fondo);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 70px 0 50px 0;
+  box-sizing: border-box;
+}
+.contact-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 38px;
+}
+.contact-header h2 {
+  font-family: var(--font-titulo);
+  font-size: 2.2rem;
+  color: var(--rojo);
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  margin-bottom: 0.3em;
+  text-shadow: 0 2px 8px #c6282827;
+}
+.contact-header p {
+  color: var(--gris-oscuro);
+  font-family: var(--font-sub);
+  font-size: 1.13rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.contact-main {
+  display: flex;
+  width: 100%;
+  max-width: 1120px;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: center;
+}
+.contact-channels-glass {
+  min-width: 210px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--rojo);
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 1.12rem;
+  text-shadow: 0 2px 9px #c6282820;
+}
+.contact-channels-glass span {
+  margin-bottom: 19px;
+  color: var(--rojo);
+  font-size: 1.12rem;
+  font-family: var(--font-titulo);
+}
+.contact-icons { display: flex; flex-direction: row; gap: 20px; }
+
+.icon-btn-glass {
+  background: rgba(198,40,40,0.12);
+  border: none;
+  border-radius: 13px;
+  box-shadow: 0 4px 22px #c6282824, 0 2px 6px #0001;
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  transition: box-shadow 0.17s, background 0.16s, filter 0.17s;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px #c6282820);
+  backdrop-filter: blur(3px) saturate(1.1);
+}
+.icon-btn-glass img {
+  width: 22px; height: 22px;
+  filter: brightness(1.9) drop-shadow(0 2px 8px #0005);
+  transition: filter 0.18s;
+}
+.icon-btn-glass:hover {
+  background: var(--rojo);
+  box-shadow: 0 4px 22px #c6282866, 0 2px 10px #0004;
+}
+.icon-btn-glass:hover img {
+  filter: brightness(2.9) drop-shadow(0 2px 12px #fff6);
+}
+
+.contact-form-glass {
+  flex: 1;
+  min-width: 240px;
+  max-width: 420px;
+  background: rgba(255,255,255,0.87);
+  border: 1.5px solid rgba(198,40,40,0.11);
+  border-radius: 16px;
+  box-shadow: 0 8px 28px #c6282813, 0 2px 10px #0002;
+  padding: 38px 28px 22px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  backdrop-filter: blur(9px) saturate(1.08);
+  color: var(--gris-oscuro);
+  font-family: var(--font-titulo);
+  align-items: stretch;
+}
+.contact-form-glass label {
+  color: var(--gris-oscuro);
+  font-family: var(--font-titulo);
+  font-size: 1.04rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 7px;
+}
+.contact-form-glass input,
+.contact-form-glass textarea,
+.contact-form-glass select {
+  background: rgba(245,245,245,0.94);
+  color: var(--gris-oscuro);
+  border: 1.5px solid var(--gris-claro);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-texto);
+  padding: 11px 13px;
+  outline: none;
+  transition: border 0.15s, background 0.16s;
+  box-shadow: 0 2px 8px #c6282810;
+  margin-top: 3px;
+  resize: none;
+}
+.contact-form-glass input:focus,
+.contact-form-glass textarea:focus,
+.contact-form-glass select:focus {
+  border: 1.5px solid var(--rojo);
+  background: rgba(245,245,245,1);
+}
+.contact-form-glass textarea { min-height: 70px; max-height: 150px; }
+.contact-form-glass button {
+  margin-top: 7px;
+  background: var(--rojo);
+  color: #fff;
+  font-family: var(--font-titulo);
+  font-size: 1.07rem;
+  font-weight: 800;
+  padding: 13px 0;
+  border: none;
+  border-radius: 9px;
+  box-shadow: 0 2px 12px #c6282844, 0 2px 10px #0002;
+  cursor: pointer;
+  transition: background 0.13s, box-shadow 0.13s, filter 0.13s;
+  letter-spacing: 0.5px;
+  filter: drop-shadow(0 0 6px #c6282820);
+}
+.contact-form-glass button:hover {
+  background: #b22222;
+  box-shadow: 0 6px 19px #c6282880, 0 4px 10px #0003;
+  filter: brightness(1.05);
+}
+
+@media (max-width: 1050px) {
+  .contact-main { flex-direction: column; align-items: center; gap: 30px; }
+  .contact-form-glass {
+    width: 90vw; max-width: 95vw; padding: 18px 3vw; font-size: 0.99rem;
+    border-radius: 12px; gap: 13px;
+  }
+}
+/* ---------- MOBILE: uniformar tamaño y espaciado de Contact con el resto ---------- */
+@media (max-width: 700px) {
+  /* sección con padding similar a About/Servicios */
+  .contact-glass {
+    padding: 36px 0 28px 0; /* más espacio arriba/abajo como las otras secciones */
+    min-height: auto;      /* dejar que el contenido marque la altura */
+  }
+
+  /* Header: título del mismo tamaño que H1 móvil del hero / About */
+  .contact-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 0 4vw;
+    margin-bottom: 18px;
+    width: 100%;
+  }
+  .contact-header h2 {
+    font-size: 1.95rem;  /* igual que otros títulos móviles */
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+    color: var(--rojo);
+    line-height: 1.02;
+    letter-spacing: 0.6px;
+  }
+  .contact-header p { display: none; } /* opcional: oculta subtítulo si ocupa espacio */
+
+  /* Canales: centrados y visibles (no ocultos) */
+  .contact-channels-glass {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 12px;
+  }
+  .contact-channels-glass span { display: none; } /* mantiene solo iconos en mobile */
+
+  .contact-icons { gap: 14px; }
+
+  /* Iconos: más grandes y con glow contenido */
+  .icon-btn-glass {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(198,40,40,0.08);
+    box-shadow: 0 8px 26px rgba(198,40,40,0.06);
+  }
+  .icon-btn-glass img { width: 24px; height: 24px; }
+
+  /* Main: columna centrada con gap amplio */
+  .contact-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 22px;
+    padding: 0 4vw;
+    width: 100%;
+  }
+
+  /* Formulario: ancho y tipografía igual de destacada que otras secciones */
+  .contact-form-glass {
+    width: 100%;
+    max-width: 760px;   /* mismo ancho de texto de About en mobile */
+    margin: 0 auto;
+    padding: 18px 4vw;
+    border-radius: 12px;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+
+  /* Inputs: tamaño táctil y fuente consistente */
+  .contact-form-glass label { gap: 6px; font-size: 1rem; }
+  .contact-form-glass input,
+  .contact-form-glass textarea,
+  .contact-form-glass select {
+    font-size: 1rem;
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  /* Botón full width para balance visual */
+  .contact-form-glass button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.03rem;
+    border-radius: 10px;
+  }
+
+  /* Si el floating button tapa el form, dejamos margen extra abajo */
+  .contact-form-glass { margin-bottom: 72px; } /* ajustar si tu flotante cambia */
+
+  /* Asegurar que la galería/otros bloques no se desalinien */
+  .about-gallery, .gallery-grid, .contact-main { padding-left: 4vw; padding-right: 4vw; }
+}
