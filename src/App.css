@@ -10,7 +10,6 @@
   --font-sub: 'Oswald', 'Roboto Condensed', sans-serif;
   --font-texto: 'Roboto', 'Arial', sans-serif;
 
-  /* spacing scale */
   --space-xs: 6px;
   --space-sm: 12px;
   --space-md: 20px;
@@ -25,12 +24,14 @@
 }
 
 /* Reset / Base */
-* {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+* { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 html, body, #root { height: 100%; }
+
+/* --- FIX: quita scroll horizontal --- */
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: var(--font-texto);
@@ -43,59 +44,39 @@ body {
   overscroll-behavior: none;
 }
 
-/* Container & Utilities */
-.container {
-  width: 100%;
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 18px;
-}
-
+/* Utilities y bases (copiá las tuyas si las tenías) */
+.container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 18px; }
 .text-center { text-align: center; }
 .muted { color: var(--gris-claro); }
 
-/* Botón base */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: var(--rojo);
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 10px;
-  font-family: var(--font-titulo);
-  font-weight: 700;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  box-shadow: 0 8px 28px rgba(198,40,40,0.12);
-}
-.btn:hover { transform: translateY(-3px); box-shadow: 0 18px 48px rgba(198,40,40,0.18); }
+/* Imagenes e iconos no deben sobresalir */
+img, svg { max-width: 100%; height: auto; display: block; }
 
-/* Card base */
-.card {
-  background: #fff;
-  border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
-  overflow: hidden;
-  border: var(--glass-border);
+/* Si tenés blobs/elementos absolutos, centrarlos para que no empujen el ancho */
+.left-decor, .blob, .hero-blob, .decorative {
+  position: absolute;
+  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90vw;
+  overflow: visible;
 }
 
-/* Headings globales */
-h1, h2, h3, h4 { margin: 0 0 12px 0; line-height: 1.15; }
-h1 { font-family: var(--font-titulo); font-size: 2.2rem; color: var(--negro); font-weight: 800; }
-h2 { font-family: var(--font-titulo); font-size: 1.75rem; color: var(--rojo); font-weight: 800; }
-h3 { font-family: var(--font-sub); font-size: 1.05rem; color: var(--rojo); font-weight: 700; }
-
-/* Global responsive tweaks */
-@media (max-width: 1050px) {
-  :root { --container: 920px; }
-  h1 { font-size: 1.8rem; }
+/* FAB (WhatsApp) forzado dentro del viewport */
+.whatsapp-fab, .wa-fab, .floating-wa {
+  position: fixed !important;
+  right: 18px !important;
+  bottom: 18px !important;
+  transform: none !important;
+  max-width: 84px;
+  max-height: 84px;
+  z-index: 9999;
+  box-sizing: border-box;
 }
-@media (max-width: 700px) {
-  :root { --container: 720px; --space-md: 16px; }
-  h1 { font-size: 1.35rem; }
-  h2 { font-size: 1.12rem; }
+
+/* Recomendación: usar width:100% en secciones, evitar 100vw */
+section, .section, .contact-glass, .hero, .page-section {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
