@@ -32,6 +32,11 @@ const servicios = [
     img: "img/transporte.webp",
     desc: "Movemos lo que otros no pueden. Ofrecemos soluciones para cargas especiales.",
   },
+  {
+  nombre: "Construcción de galpones, techos y ampliaciones",
+  img: "img/construccion.webp",
+  desc: "Realizamos movimiento de suelo, construcción de paredes y estructuras metálicas o tradicionales, asegurando una ejecución eficiente, segura y de alta calidad en cada proyecto.",
+},
 ];
 
 function Servicios() {

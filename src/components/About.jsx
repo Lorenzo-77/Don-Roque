@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "./About.css";
 
-const images = Array.from({ length: 8 }, (_, i) => `img/${i + 1}.webp`);
+const images = Array.from({ length: 12 }, (_, i) => `img/${i + 1}.webp`);
 
 function About() {
   const [lightbox, setLightbox] = useState({ open: false, idx: 0 });
